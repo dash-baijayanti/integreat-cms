@@ -1930,6 +1930,18 @@ msgstr "{} \"{}\" wurde erfolgreich aktualisiert"
 msgid "Enter {} here"
 msgstr "{} hier eingeben"
 
+#: cms/forms/events/event_filter_form.py cms/forms/pages/page_filter_form.py
+#: cms/templates/content_versions.html cms/templates/events/event_form.html
+#: cms/templates/events/event_list.html cms/templates/pages/page_form.html
+#: cms/templates/pages/pages_page_tree.html cms/templates/pois/poi_form.html
+#: cms/templates/pois/poi_list.html
+msgid "Publication status"
+msgstr "Veröffentlichungsstatus"
+
+#: cms/forms/events/event_filter_form.py cms/forms/pages/page_filter_form.py
+msgid "All"
+msgstr "Alle"
+
 #: cms/forms/events/event_form.py
 msgid "All-day"
 msgstr "Ganztägig"
@@ -2173,17 +2185,6 @@ msgid ""
 msgstr ""
 "Eine Organisation mit diesem Namen existiert bereits in dieser Region. Bitte "
 "wählen Sie einen anderen Namen."
-
-#: cms/forms/pages/page_filter_form.py cms/templates/content_versions.html
-#: cms/templates/events/event_form.html cms/templates/events/event_list.html
-#: cms/templates/pages/page_form.html cms/templates/pages/pages_page_tree.html
-#: cms/templates/pois/poi_form.html cms/templates/pois/poi_list.html
-msgid "Publication status"
-msgstr "Veröffentlichungsstatus"
-
-#: cms/forms/pages/page_filter_form.py
-msgid "All"
-msgstr "Alle"
 
 #: cms/forms/pages/page_filter_form.py
 msgid "Translation status"
@@ -6180,6 +6181,10 @@ msgstr "Veranstaltungsort"
 #: cms/templates/events/_event_filter_form.html
 msgid "Empty query input"
 msgstr "Sucheingabe löschen"
+
+#: cms/templates/events/_event_filter_form.html
+msgid "Event Status"
+msgstr "Veröffentlichungsstatus von Veranstaltungen"
 
 #: cms/templates/events/_event_filter_form.html
 msgid "All day events"
@@ -11703,6 +11708,12 @@ msgstr ""
 "Diese Seite konnte nicht importiert werden, da sie zu einer anderen Region "
 "gehört ({})."
 
+#~ msgid "Events in draft"
+#~ msgstr "Veranstaltungen im Entwurf"
+
+#~ msgid "Published events"
+#~ msgstr "Veröffentlichte Veranstaltungen"
+
 #~ msgid "Online link is required when the event has no physical location."
 #~ msgstr ""
 #~ "Ein Online ist erforderlich wenn die Veranstaltung keinen physischen Ort "
@@ -12015,15 +12026,15 @@ msgstr ""
 #~ "Übersetzungen. Bitte haben Sie noch ein wenig Geduld."
 
 #~ msgid ""
-#~ "Your pages currently have <b>"
-#~ "%(number_of_missing_or_outdated_translations)s pages </b>that have an "
+#~ "Your pages currently have "
+#~ "<b>%(number_of_missing_or_outdated_translations)s pages </b>that have an "
 #~ "outdated or no translation. In order for the users to benefit from your "
 #~ "content you should translate them or have them translated."
 #~ msgstr ""
-#~ "Ihre Inhalten haben aktuell <b>"
-#~ "%(number_of_missing_or_outdated_translations)s Seiten </b> mit fehlender "
-#~ "oder veralteter Übersetzung. Damit die Nutzer:innen von Ihren Inhalten "
-#~ "profitieren können, sollten Sie diese übersetzen (lassen)."
+#~ "Ihre Inhalten haben aktuell "
+#~ "<b>%(number_of_missing_or_outdated_translations)s Seiten </b> mit "
+#~ "fehlender oder veralteter Übersetzung. Damit die Nutzer:innen von Ihren "
+#~ "Inhalten profitieren können, sollten Sie diese übersetzen (lassen)."
 
 #~ msgid "View location"
 #~ msgstr "Ort ansehen"

@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import logging
 from typing import TYPE_CHECKING
 
+from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -12,6 +14,9 @@ from ..regions.region import Region
 
 if TYPE_CHECKING:
     from typing import Any
+
+
+logger = logging.getLogger(__name__)
 
 
 class UserChatManager(models.Manager):
@@ -103,6 +108,9 @@ class UserChat(AbstractBaseModel, ZammadAPI):
         related_name="chats",
         verbose_name="Language of chat app user",
     )
+    total_words_generated = models.IntegerField(
+        help_text="Number of words generated in this chat.", default=0
+    )
 
     # manager for fetching only the newest (i.e. current) chat
     objects = UserChatManager()
@@ -139,6 +147,25 @@ class UserChat(AbstractBaseModel, ZammadAPI):
                 f"{self.region.zammad_url}/#ticket/zoom/{self.zammad_id}"
             )
         return response
+
+    def count_words(self, words_generated: int) -> None:
+        """
+        Update the number of generated words in the database.
+
+        :param words_generate: the number of words generated in an automatic response
+        """
+        self.refresh_from_db()
+        self.total_words_generated += words_generated
+        region = self.region
+        region.mt_budget_used -= words_generated * settings.INTEGREAT_CHAT_BUDGET_WEIGHT
+        self.save()
+        region.save()
+        logger.info(
+            "Subtracting %i generated chat answer words from machine translation budget for %s. New used budget: %i.",
+            words_generated,
+            region.slug,
+            region.mt_budget_used,
+        )
 
     class Meta:
         verbose_name = _("user chat")

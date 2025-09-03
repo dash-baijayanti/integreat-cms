@@ -28,16 +28,10 @@ const renderIconPreview = ({ target }: Event) => {
 const colorizeIcons = () => {
     const icons = document.querySelectorAll(".preview-color:not([data-color=''])") as NodeListOf<HTMLObjectElement>;
     Array.from(icons).forEach((icon) => {
-        const backgroundCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-        backgroundCircle.setAttribute("cx", "20");
-        backgroundCircle.setAttribute("cy", "20");
-        backgroundCircle.setAttribute("r", "20");
-        backgroundCircle.setAttribute("fill", `${icon.dataset.color}`);
-
+        const iconEl = icon;
         const svg = icon.getSVGDocument().querySelector("svg");
-
-        svg.querySelector("path").setAttribute("fill", "#FFFFFF");
-        svg.prepend(backgroundCircle);
+        svg.style.color = "white";
+        iconEl.style.visibility = "visible";
     });
 };
 

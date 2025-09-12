@@ -39,7 +39,6 @@ import "./js/forms/distribute-sidebar-boxes";
 
 import "./js/languages/country-flag-fields";
 import "./js/languages/language-color-fields";
-import "./js/languages/language-tree-node-form";
 
 import "./js/regions/conditional-fields";
 import "./js/regions/fake-disabled-checkboxes";

@@ -91,16 +91,6 @@
         "kind": "test",
         "isDefault": true
       }
-    },
-    {
-      "label": "start-docker",
-      "type": "shell",
-      "command": "docker start integreat_django_postgres"
-    },
-    {
-      "label": "stop-docker",
-      "type": "shell",
-      "command": "docker stop integreat_django_postgres"
     }
   ]
 }

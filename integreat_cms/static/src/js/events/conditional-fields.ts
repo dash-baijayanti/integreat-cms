@@ -61,7 +61,12 @@ window.addEventListener("load", () => {
         });
     }
 
-    // Toggle for location block and meeting url block in poi-box.ts
+    // event handler to show location selection
+    document.getElementById("id_has_not_location")?.addEventListener("click", () => {
+        document.getElementById("location-block").classList.toggle("hidden");
+        const locationInput = document.getElementById("id_location") as HTMLInputElement;
+        locationInput.disabled = !locationInput.disabled;
+    });
 
     // The list of time range options
     const eventsCustomTimeRangeCheckboxList = document.getElementById("id_events_time_range");
